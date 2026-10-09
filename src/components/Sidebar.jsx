@@ -17,7 +17,7 @@ export default function Sidebar({ currentTab, setCurrentTab }) {
                             DevPulse
                         </h1>
                         <p className='text-[10px] uppercase tracking-[0.2em] text-slate-400'>
-                            Full-stack developer
+                            Frontend Developer
                         </p>
                     </div>
                 </div>

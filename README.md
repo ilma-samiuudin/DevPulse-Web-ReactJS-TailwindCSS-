@@ -1,16 +1,9 @@
-# React + Vite
+# DevPulse
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Frontend project built with React, Vite, and Tailwind CSS. Backend is a separate project (see link below). Integration is planned.
 
-Currently, two official plugins are available:
+## Backend Projects
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- E-commerce FastAPI backend: [YAHAN APNI BACKEND REPO KA LINK DAAL DO](#)
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+This backend project is separate from DevPulse and is not connected to this frontend project.

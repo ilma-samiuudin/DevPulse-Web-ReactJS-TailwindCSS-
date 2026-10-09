@@ -4,8 +4,12 @@ export const skillGroups = [
     skills: ["HTML 5", "CSS", "JavaScript", "Bootstrap", "Tailwind CSS", "React.js", "Context API", "jQuery"],
   },
   {
+    name: "Backend (Learning)",
+    skills: ["Python", "FastAPI"],
+  },
+  {
     name: "Backend & Data",
-    skills: ["Python", "FastAPI", "SQL", "REST APIs"],
+    skills: ["SQL", "REST APIs"],
   },
   {
     name: "Tools",

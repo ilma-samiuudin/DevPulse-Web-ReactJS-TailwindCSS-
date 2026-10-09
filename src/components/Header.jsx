@@ -20,7 +20,7 @@ export default function Header({ activeCategory, setActiveCategory, setCurrentTa
                         Ilma's Portfolio
                     </h2>
                     <p className='mt-2 text-sm leading-6 text-slate-500 sm:text-base'>
-                        Full-stack web developer building connected, useful web experiences.
+                        Frontend Developer | Learning Backend building connected, useful web experiences.
                     </p>
                 </div>
 

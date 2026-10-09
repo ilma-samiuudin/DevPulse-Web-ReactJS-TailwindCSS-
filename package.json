@@ -1,5 +1,6 @@
 {
   "name": "devpulse",
+  "description": "Frontend project built with React and Tailwind CSS. Backend is a separate project (see README). Integration is planned.",
   "private": true,
   "version": "0.0.0",
   "type": "module",

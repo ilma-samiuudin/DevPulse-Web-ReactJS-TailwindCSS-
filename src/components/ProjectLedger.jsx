@@ -41,7 +41,6 @@ export default function ProjectLedger({ projects }) {
           <h1 className="mt-2 text-3xl font-black tracking-tight text-slate-900 md:text-4xl">Project ledger</h1>
           <p className="mt-2 text-sm text-slate-500">Review project status, stack, and details in one place.</p>
         </div>
-        <p className="text-sm font-semibold text-slate-500">{visibleProjects.length} of {projects.length} projects</p>
       </div>
 
       <div className="mb-4 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white/80 p-4 sm:flex-row">

@@ -11,7 +11,7 @@ export const projectsData = [
         title: "DevPulse Dashboard",
         category: "Tailwind",
         description: "A portfolio workspace with searchable projects, persistent data, and reusable interface components.",
-        tech: ["React", "Tailwind CSS", "Local Storage"]
+        tech: ["React", "Tailwind CSS"]
     
     },
     {

@@ -10,6 +10,12 @@ import { projectMatchesCategory } from "./data/ProjectCategories";
 
 const STORAGE_KEY = "devpulse-projects";
 const THEME_STORAGE_KEY = "devpulse-theme";
+const mobileNavigationItems = [
+  { id: "dashboard", label: "Dashboard" },
+  { id: "projects", label: "Projects" },
+  { id: "about", label: "About" },
+  { id: "ledger", label: "Ledger" },
+];
 const DISALLOWED_TECH = new Set([
   "node.js",
   "nodejs",
@@ -17,6 +23,7 @@ const DISALLOWED_TECH = new Set([
   "mongo db",
   "tailwind v4",
   "tailwindv4",
+  "local storage",
   "vite",
 ]);
 
@@ -53,8 +60,12 @@ function getInitialProjects() {
 export default function App() {
   const [activeCategory, setActiveCategory] = useState("React");
   const [currentTab, setCurrentTab] = useState("dashboard");
-  const [theme, setTheme] = useState(() => localStorage.getItem(THEME_STORAGE_KEY) || "light");
+  const [theme, setTheme] = useState(() => localStorage.getItem(THEME_STORAGE_KEY) || "dark");
   const [projects, setProjects] = useState(getInitialProjects);
+
+  function toggleTheme() {
+    setTheme((currentTheme) => currentTheme === "light" ? "dark" : "light");
+  }
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
@@ -81,24 +92,21 @@ export default function App() {
 
       <div className="main-panel flex-1 flex flex-col h-screen overflow-y-auto">
         <div className="mobile-topbar md:hidden">
-          <div>
+          <div className="min-w-0">
             <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-indigo-600">
               DevPulse
             </p>
-            <p className="mt-1 text-sm font-semibold text-slate-700">Portfolio workspace</p>
-          </div>
-          <div className="h-8 w-8 rounded-full bg-indigo-100 text-center text-sm font-bold leading-8 text-indigo-600">
-            {projects.length}
+            <p className="mt-1 truncate text-sm font-semibold text-slate-700">Portfolio workspace</p>
           </div>
         </div>
 
-        <main className="p-6 md:p-10 max-w-7xl w-full mx-auto">
+        <main className="w-full px-3 py-5 pb-24 sm:px-5 sm:py-6 sm:pb-24 lg:px-8 lg:py-10 2xl:px-10">
           <Header
             activeCategory={activeCategory}
             setActiveCategory={setActiveCategory}
             setCurrentTab={setCurrentTab}
             theme={theme}
-            onToggleTheme={() => setTheme((current) => current === "light" ? "dark" : "light")}
+            onToggleTheme={toggleTheme}
           />
 
           {currentTab === "dashboard" && (
@@ -107,6 +115,7 @@ export default function App() {
               filteredProjects={filteredProjects}
               reactCount={reactCount}
               fullstackCount={fullstackCount}
+              onOpenProjects={() => setCurrentTab("projects")}
             />
           )}
 
@@ -121,8 +130,22 @@ export default function App() {
           )}
         </main>
 
-        <footer className="mt-10 border-t border-slate-200/80 px-6 py-6 text-xs text-slate-500 md:px-10">
-          <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <nav className="mobile-nav md:hidden" aria-label="Mobile navigation">
+          {mobileNavigationItems.map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              aria-current={currentTab === item.id ? "page" : undefined}
+              onClick={() => setCurrentTab(item.id)}
+              className={`mobile-nav-item ${currentTab === item.id ? "active" : ""}`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </nav>
+
+        <footer className="mt-10 border-t border-slate-200/80 px-3 py-6 pb-24 text-xs text-slate-500 sm:px-5 md:px-8 md:pb-6 2xl:px-10">
+          <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
               <span>DevPulse • Built to organize creative work.</span>
             </div>

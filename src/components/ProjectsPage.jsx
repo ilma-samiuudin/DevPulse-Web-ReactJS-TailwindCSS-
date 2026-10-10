@@ -9,7 +9,6 @@ const categoryOptions = [
   "UI/UX",
   "Context API",
   "REST API",
-  "Local Storage",
   "JWT",
 ];
 
@@ -233,14 +232,14 @@ export default function ProjectsPage({ projects, setProjects }) {
             ))}
           </div>
             <div className="flex w-full items-center justify-between gap-2">
-              <div className="flex min-w-0 gap-2 overflow-x-auto py-1 md:justify-end" aria-label="Filter projects by category">
+              <div className="flex min-w-0 flex-nowrap gap-2 overflow-x-auto py-1 md:justify-start" aria-label="Filter projects by category">
             {['All', ...categoryFilters].map((filter) => (
               <button
                 key={filter}
                 type="button"
                 onClick={() => setActiveFilter(filter)}
                 aria-pressed={activeFilter === filter}
-                className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
+                className={`shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
                   activeFilter === filter
                     ? 'bg-slate-900 text-white'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
@@ -250,9 +249,6 @@ export default function ProjectsPage({ projects, setProjects }) {
               </button>
             ))}
           </div>
-          <p className="hidden text-sm font-medium text-slate-500 sm:block">
-            {visibleProjects.length} of {totalProjects}
-          </p>
           </div>
         </div>
       </div>

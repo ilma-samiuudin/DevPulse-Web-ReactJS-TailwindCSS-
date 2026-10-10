@@ -5,7 +5,7 @@ export default function Header({ activeCategory, setActiveCategory, setCurrentTa
     const categories = ["React", "Tailwind", "Fullstack", "UI/UX"];
 
     return (
-        <header className='header-panel border-b border-slate-200/80 pb-6 mb-8'>
+        <header className='header-panel mb-8 border-b border-slate-200/80 pb-6'>
             <div className='flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between'>
                 <div className='max-w-2xl'>
                     <button
@@ -36,12 +36,13 @@ export default function Header({ activeCategory, setActiveCategory, setCurrentTa
                     </button>
                 </div>
             </div>
-            <div className='mt-8 flex space-x-2 overflow-x-auto pb-2 scrollbar-none'>
+            <nav aria-label='Project categories' className='mt-8 flex w-full min-w-0 max-w-full flex-nowrap gap-2 overflow-x-auto overscroll-x-contain pb-2 [touch-action:pan-x] scrollbar-none'>
                 {categories.map((cat) => (
                     <button
                         key={cat}
+                        type='button'
                         onClick={() => setActiveCategory(cat)}
-                        className={`px-4 py-2 text-xs font-semibold rounded-full transition-all whitespace-nowrap ${
+                        className={`min-w-max flex-1 px-4 py-2 text-center text-xs font-semibold rounded-full transition-all whitespace-nowrap sm:flex-none ${
                             activeCategory === cat
                                 ? 'bg-indigo-600 text-white shadow-sm'
                                 : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
@@ -50,7 +51,7 @@ export default function Header({ activeCategory, setActiveCategory, setCurrentTa
                         {cat}
                     </button>
                 ))}
-            </div>
+            </nav>
         </header>
     )
 }

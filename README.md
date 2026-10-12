@@ -8,7 +8,7 @@ You can view my live portfolio here: https://personal-portfolio-react-phi-gules.
 
 # Features & Tech Stack
 * ReactJS - Component-based structure for smooth perfomance
-* Tailwind CSS - For moden , clean and custom styling
+* Tailwind CSS - For modern , clean and custom styling
 * Fully Responsive - Optimized for mobile, tablet, desktop
 * Sections Included
 

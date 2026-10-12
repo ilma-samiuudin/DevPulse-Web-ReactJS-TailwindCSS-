@@ -1,9 +1,18 @@
-# DevPulse
+# Personal Portfolio Website
 
-Frontend project built with React, Vite, and Tailwind CSS. Backend is a separate project (see link below). Integration is planned.
+A professional Frontend project built with React, Vite, and Tailwind CSS.
+Perosnal portfolio website is fully responsive, modern showing my skills.
 
-## Backend Projects
+## Live Demo
+You can view my live portfolio here: https://personal-portfolio-react-phi-gules.vercel.app/
 
-- E-commerce FastAPI backend: [YAHAN APNI BACKEND REPO KA LINK DAAL DO](#)
+# Features & Tech Stack
+* ReactJS - Component-based structure for smooth perfomance
+* Tailwind CSS - For moden , clean and custom styling
+* Fully Responsive - Optimized for mobile, tablet, desktop
+* Sections Included
 
-This backend project is separate from DevPulse and is not connected to this frontend project.
+## How to Run locally
+1. Clone the respository
+2. Install dependencies: `npm install`
+3. Start development server: `npm run dev`(or `npm start`)
